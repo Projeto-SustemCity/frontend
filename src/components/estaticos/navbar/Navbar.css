@@ -1,0 +1,36 @@
+.fundo-navbar {
+
+    
+    text-decoration: none;
+    background: linear-gradient(36deg, #7d974e 80%,#b0906b 9%)!important;
+    background-repeat: no-repeat;
+    background-size: 15vw, 15vh;
+
+}
+
+.text-decorator-none {
+    text-decoration: none;
+}
+
+
+
+.alinhar-navbar {
+    justify-content: center;
+    display: flex;
+    
+}
+
+.alinhar-navbar img{
+    justify-content: left;
+    margin-left: '0px';
+    
+}
+.alinhar-navbar h6 {
+    margin-left: 50px;
+}
+
+.cursor {
+   
+    cursor: pointer;
+    color: white;
+}
