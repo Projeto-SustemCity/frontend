@@ -1,0 +1,10 @@
+.back{
+    background-color: #20df9c;
+    width: 100vw;
+    height: 100vh;
+}
+
+.titulo h3{
+    color: white !important;
+    font-weight: bold;
+}

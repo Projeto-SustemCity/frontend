@@ -1,0 +1,21 @@
+.textos1 {
+    font-weight: bold !important;
+    color: black !important;
+}
+
+.textos{
+    font-weight: bold !important;
+}
+
+.image {
+    background-image: url(https://imgur.com/I37M5dQ.png) !important;
+    background-repeat: no-repeat !important;
+    width: 100vw !important;
+    min-height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.text-decorator-none {
+    text-decoration: none !important;
+}
