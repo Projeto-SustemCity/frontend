@@ -1,26 +1,25 @@
 import React from 'react';
-import {Typography, Box, Grid, Button} from '@material-ui/core';
+import { Typography, Box, Grid, Button } from '@material-ui/core';
+
 import './Home.css';
 
 function Home() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#3F51B5" }}>
+            <Grid container direction="row" justifyContent="center" alignItems="center" className='back'>
                 <Grid alignItems="center" item xs={6}>
-                    <Box paddingX={20} >
-                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
-                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>expresse aqui os seus pensamentos e opiniões!</Typography>
+                    <Box className='titulo' paddingX={20} >
+                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" >Sejam bem vindos(as)!</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
                         </Box>
-                        <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
-                    {/* <img src="../assets/img/Icone.svg" alt="" width="100vw" height="100vh" /> */}
-                </Grid>
-                <Grid xs={12} style={{ backgroundColor: "white" }}>
+                    <Box display='flex' justifyContent='center'>
+                        <img src="https://imgur.com/I37M5dQ.png" alt="Logo SustemCity" width="500vw" height="500vh" />
+                    </Box>
                 </Grid>
             </Grid>
         </>
