@@ -8,6 +8,9 @@ import Footer from './components/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 import './App.css';
+import CadastrarCategoria from './components/categoria/cadastrarCategoria/CadastrarCategoria';
+import ListaCategoria from './components/categoria/listaCategoria/ListaCategoria';
+import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
 
 function App() {
   return (
@@ -20,8 +23,10 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/cadastrousuario" element={<CadastroUsuario />} />
-
-
+          <Route path="/categoria" element={<ListaCategoria />} />
+          <Route path="/cadastrarCategoria" element={<CadastrarCategoria />} />
+          <Route path="/atualizarCategoria/:id" element={<CadastrarCategoria />} />
+          <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
         </Routes>
       </div>
       <Footer />

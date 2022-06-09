@@ -5,15 +5,17 @@ import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
 
+import './CadastrarCategoria.css';
+
 function CadastrarCategoria() {
 
     let navigate = useNavigate();
-    const {id} = useParams<{id : string}> ();
+    const {id} = useParams<{id: string}> ();
     const [token, setToken] = useLocalStorage('token'); 
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
-        categoria: "",
-        descricao: "",
+        categoria: '',
+        descricao: '',
     });
 
     useEffect (() => {
@@ -91,6 +93,7 @@ function CadastrarCategoria() {
             <Typography variant = "h3" color ="textSecondary" component ="h1" align = "center" > 
                 Cadastrar categoria
             </Typography>
+            <TextField value={categoria.categoria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="categoria" label="Nome" name="categoria" margin="normal" fullWidth />
             <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="descricao" label="Descrição" name="descricao" margin="normal" fullWidth />
             <Button type="submit" variant="contained" color="primary">
                 Cadastrar

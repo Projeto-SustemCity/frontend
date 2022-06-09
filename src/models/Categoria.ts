@@ -1,7 +1,5 @@
-
-
 interface Categoria{
-    id:Number;
+    id:number;
     categoria:string;
     descricao:string;
 

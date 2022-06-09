@@ -18,13 +18,11 @@ function Navbar() {
           </Box>
 
           <Box className="links" display="flex" justifyContent="start">
-            <Typography variant="h6" color="inherit">Home</Typography>
+            <Link to='/home'><Typography variant="h6" color="inherit">Home</Typography></Link>
             <Typography variant="h6" color="inherit">Produtos</Typography>
-            <Typography variant="h6" color="inherit">Categorias</Typography>
-
-            <Link to="/sobre" className="text-decorator-none">
-              <Typography variant="h6" color="inherit">Sobre Nós</Typography>
-            </Link>
+            <Link to='/categoria'><Typography variant="h6" color="inherit">Categorias</Typography></Link>
+            <Link to='/cadastrarCategoria'><Typography variant="h6" color="inherit">Cadastrar Categoria</Typography></Link>
+            <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" color="inherit">Sobre Nós</Typography></Link>
 
             <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu">
               <Link to='/login' className='text-decorator-none'>
