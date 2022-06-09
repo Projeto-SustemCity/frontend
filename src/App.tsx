@@ -11,6 +11,9 @@ import './App.css';
 import CadastrarCategoria from './components/categoria/cadastrarCategoria/CadastrarCategoria';
 import ListaCategoria from './components/categoria/listaCategoria/ListaCategoria';
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
+import ListaProduto from './components/produto/listaProduto/ListaProduto';
+import CadastroProduto from './components/produto/cadastroProduto/CadastroProduto';
+import DeletarProduto from './components/produto/deletarProduto/DeleteProduto';
 
 function App() {
   return (
@@ -24,9 +27,13 @@ function App() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           <Route path="/categoria" element={<ListaCategoria />} />
+          <Route path="/produtos/all" element={<ListaProduto />} />
           <Route path="/cadastrarCategoria" element={<CadastrarCategoria />} />
           <Route path="/atualizarCategoria/:id" element={<CadastrarCategoria />} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+          <Route path="/cadastroProduto" element={<CadastroProduto />} />
+          <Route path="/atualizarProduto/:id" element={<CadastroProduto />} />
+          <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
         </Routes>
       </div>
       <Footer />

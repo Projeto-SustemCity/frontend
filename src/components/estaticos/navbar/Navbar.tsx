@@ -19,9 +19,12 @@ function Navbar() {
 
           <Box className="links" display="flex" justifyContent="start">
             <Link to='/home'><Typography variant="h6" color="inherit">Home</Typography></Link>
-            <Typography variant="h6" color="inherit">Produtos</Typography>
+            <Link to="/produtos/all"> <Typography variant="h6" color="inherit">Produtos</Typography></Link>
+           
             <Link to='/categoria'><Typography variant="h6" color="inherit">Categorias</Typography></Link>
             <Link to='/cadastrarCategoria'><Typography variant="h6" color="inherit">Cadastrar Categoria</Typography></Link>
+            <Link to='/cadastroProduto'><Typography variant="h6" color="inherit">Cadastrar Produto</Typography></Link>
+
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" color="inherit">Sobre Nós</Typography></Link>
 
             <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu">
