@@ -1,4 +1,4 @@
-import { NoSubstitutionTemplateLiteral } from "typescript";
+
 
 interface Categoria{
     id:Number;

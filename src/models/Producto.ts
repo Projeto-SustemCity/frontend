@@ -1,7 +1,7 @@
 
-import { NoSubstitutionTemplateLiteral } from "typescript";
 
-interface Producto{
+
+interface Produto{
     id:Number;
     producto:string;
     valor:Number;
@@ -11,4 +11,4 @@ interface Producto{
     
 
 }
-export default Producto;
+export default Produto;
