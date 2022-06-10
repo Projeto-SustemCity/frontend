@@ -52,6 +52,8 @@ function Navbar() {
             <Link to='/cadastrarCategoria'className="text-decorator-none"><Typography variant="h6"className="fontenavbar"  color="inherit">Cadastrar Categoria</Typography></Link>
             <Link to='/cadastroProduto'className="text-decorator-none"><Typography variant="h6" className="fontenavbar " color="inherit">Cadastrar Produto</Typography></Link>
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar"  color="inherit">Sobre Nós</Typography></Link>
+            
+            <Link to="/cart" className="text-decorator-none"><Typography variant="h6" className="fontenavbar"  color="inherit">Carrinho</Typography></Link>
 
             <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu" onClick={goLogout}>
               <Link to='/login' className='text-decorator-none'>

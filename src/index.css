@@ -4,20 +4,14 @@
 
 body {
   margin: 0;
-<<<<<<< HEAD
   font-family: 'Merriweather', serif;
-=======
->>>>>>> 6211e666153af151e643a2271eb38abfd186630d
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-<<<<<<< HEAD
+
   font-family: 'Merriweather', serif;
 }
-=======
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; */
-}
->>>>>>> 6211e666153af151e643a2271eb38abfd186630d
+
+

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
+import { Button, Box, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Box } from "@mui/material";
 import { buscaId, deleteId } from '../../../services/Service';
 import './DeleteProduto.css';
 import Produto from '../../../models/Produto';
