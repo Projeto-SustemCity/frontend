@@ -1,27 +1,26 @@
-.box1{
-    background-color: #7d974e !important;
-    height: 120px !important;
+.box1 {
+    background: linear-gradient(36deg, #7d974e 80%, #b0906b 9%);
+    ;
+    height: 70px !important;
+    padding-top: 10px;
 }
 
-.box2{
-    background-color: #b0906b !important;
-    height: 60px !important;
+.box2 {
+    padding-left: 10px;
 }
 
-.textos{
+.redes {
+    font-size: 40px !important;
     color: white !important;
 }
 
-.textos2{
+.box3 {
+    padding-right: 10px;
     color: white !important;
     font-weight: bold !important;
 }
 
-.textos2 a{
+.box3 a {
     text-decoration: none;
-}
-
-.redes{
-    font-size: 40px !important;
     color: white !important;
 }
