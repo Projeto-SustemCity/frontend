@@ -6,7 +6,6 @@ import Sobre from './paginas/sobre/Sobre';
 import Login from './paginas/login/Login';
 import Footer from './components/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
-
 import './App.css';
 import CadastrarCategoria from './components/categoria/cadastrarCategoria/CadastrarCategoria';
 import ListaCategoria from './components/categoria/listaCategoria/ListaCategoria';
@@ -14,9 +13,15 @@ import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCat
 import ListaProduto from './components/produto/listaProduto/ListaProduto';
 import CadastroProduto from './components/produto/cadastroProduto/CadastroProduto';
 import DeletarProduto from './components/produto/deletarProduto/DeleteProduto';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
+    <Provider store = {store}>
+    <ToastContainer/>
     <Router>
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
@@ -39,6 +44,7 @@ function App() {
       <Footer />
 
     </Router>
+    </Provider>
   );
 }
 

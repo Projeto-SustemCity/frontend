@@ -3,19 +3,32 @@ import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem,
 import './CadastroProduto.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
-import useLocalStorage from 'react-use-localstorage';
 import Produto from '../../../models/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroProduto() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [categoria, setCategoria] = useState<Categoria[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.info('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                
+                });
             navigate("/login")
 
         }
@@ -30,7 +43,7 @@ function CadastroProduto() {
     const [produtos, setProduto] = useState<Produto>({
         id: 0,
         produto: '',
-        valor: 0,
+        valor: 0.0,
         descricao: '',
         foto: '',
         tipo: '',
@@ -86,14 +99,32 @@ function CadastroProduto() {
                     'Authorization': token
                 }
             })
-            alert('Produto atualizado com sucesso');
+            toast.success('Produto atualizado com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                
+                });
         } else {
             post(`/produtos`, produtos, setProduto, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Produto cadastrado com sucesso');
+            toast.success('Produto cadastrado com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                
+                });
         }
         back()
 

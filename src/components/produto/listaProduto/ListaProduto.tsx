@@ -4,18 +4,30 @@ import { busca } from '../../../services/Service'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import {Box} from "@mui/material";
 import './ListaProduto.css';
-import useLocalStorage from 'react-use-localstorage';
 import Produto from '../../../models/Produto';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function ListaProduto() {
   const [produtos, setProduto] = useState<Produto[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
   let navigate = useNavigate();
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado")
+      toast.info('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
       navigate("/login")
 
     }
@@ -49,13 +61,13 @@ function ListaProduto() {
                   {produto.produto}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.valor}
+                  <img src={produto.foto} className='tamanho'/>
                 </Typography>
                 <Typography variant="body2" component="p">
                   {produto.descricao}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.foto}
+                 US$ {produto.valor}
                 </Typography>
                 <Typography variant="body2" component="p">
                   {produto.tipo}

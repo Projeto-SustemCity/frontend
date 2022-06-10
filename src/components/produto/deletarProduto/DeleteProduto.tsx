@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box } from "@mui/material";
-
 import { buscaId, deleteId } from '../../../services/Service';
-
 import './DeleteProduto.css';
 import Produto from '../../../models/Produto';
-import useLocalStorage from 'react-use-localstorage';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function DeletarProduto() {
@@ -16,13 +16,24 @@ function DeletarProduto() {
 
     const { id } = useParams<{ id: string }>();
 
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     const [produtos, setProdutos] = useState<Produto>()
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
+            toast.info('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+
+            });
             navigate("/login")
 
         }
@@ -44,14 +55,22 @@ function DeletarProduto() {
 
     async function sim() {
         navigate('/produtos/all')
-        
+
         await deleteId(`/produtos/${id}`, {
             headers: {
                 'Authorization': token
             }
         });
 
-        alert('Produto deletado com sucesso');
+        toast.success('produto deletado com sucesso', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
 
     function nao() {

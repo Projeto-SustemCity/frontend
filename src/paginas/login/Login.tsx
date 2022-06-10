@@ -1,16 +1,18 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Grid, Box, Typography, Button, TextField } from "@material-ui/core";
 import { Link, useNavigate } from 'react-router-dom'
-import useLocalStorage from "react-use-localstorage";
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
-
 import './Login.css';
+import { useDispatch} from "react-redux";
+import { addToken } from "../../store/tokens/actions";
+import { toast } from "react-toastify";
 
 function Login() {
 
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage("token");
+    const dispatch = useDispatch(); 
+    const [token , setToken] = useState('')
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -21,31 +23,46 @@ function Login() {
             token: ""
         })
 
-    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+        function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
-        setUserLogin({
-            ...userLogin,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    useEffect(() => {
-        if (token != "") {
-            navigate('/home')
+            setUserLogin({
+                ...userLogin,
+                [e.target.name]: e.target.value
+            })
         }
-    }, [token])
-
-    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault();
-
-        try {
-            await login(`/usuarios/logar`, userLogin, setToken)
-
-            alert("Usuario logado com sucesso!")
-        } catch (error) {
-            alert("Dados do usuário inconsistentes. Erro ao logar!!")
+    
+        useEffect(()=>{
+            if(token !== ''){
+                dispatch(addToken(token));
+                navigate('/home')
+            }
+        }, [token])
+    
+        async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+            e.preventDefault();
+            try {
+                await login(`/usuarios/logar`, userLogin, setToken)
+                toast.success('Usuário Logado com Sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                });
+            } catch (error) {
+                toast.error('Dados do Usuário inconsistentes. Erro ao logar!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                });
+            }
         }
-    }
 
     return (
         <Grid container direction='row' justifyContent="center" alignItems="center">

@@ -1,19 +1,32 @@
 import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { toast } from "react-toastify";
 import Categoria from "../../../models/Categoria";
 import { buscaId, deleteId } from "../../../services/Service";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 function DeletarCategoria() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token'); 
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+      (state) => state.tokens
+  ); 
     const [categoria, setCategoria] = useState<Categoria>()
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+          toast.info('Você precisa estar logado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            
+            });
             navigate("/login")
     
         }
@@ -41,9 +54,27 @@ function DeletarCategoria() {
                 'Authorization': token
               }
             });
-            alert('Categoria deletada com sucesso!');
+            toast.success('Categoria deletada com sucesso', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              
+              });
           } catch (error) {
-            alert('Erro ao deletar');
+            toast.error('Erro ao deletar', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              
+              });
           }
         }
         

@@ -1,9 +1,9 @@
 import Categoria from "./Categoria";
 
 interface Produto{
-    id:Number;
+    id:number;
     produto:string;
-    valor:Number;
+    valor:number;
     descricao:string;
     foto:string;
     tipo:string;
