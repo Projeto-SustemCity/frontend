@@ -1,4 +1,13 @@
 .tamanho {
-    width: 100px ;
-    height: 100px;
+    width: 200px !important;
+    height: 200px;
+}
+
+.card{
+    width: 500px;
+    height: 400px;
+}
+
+.alinhar{ 
+    display: flex;
 }

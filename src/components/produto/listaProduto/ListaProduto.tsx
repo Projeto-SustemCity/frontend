@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { busca } from '../../../services/Service'
-import { Card, Box, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, Box, CardActions, CardContent, Button, Typography, CardMedia, Grid } from '@material-ui/core';
 
 import './ListaProduto.css';
 import Produto from '../../../models/Produto';
@@ -14,7 +14,7 @@ function ListaProduto() {
   const [produtos, setProduto] = useState<Produto[]>([])
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
-);
+  );
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function ListaProduto() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+      });
       navigate("/login")
 
     }
@@ -50,54 +50,31 @@ function ListaProduto() {
   return (
     <>
       {
-       produtos.map(produto => (
-          <Box m={2} >
-            <Card variant="outlined">
-              <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  Produtos
+        produtos.map(produto => (
+          <Grid xs={12}>
+            <Box m={2}>
+              <Card className='card'>
+                <CardMedia  />
+                <Typography>
+                  <img src={produto.foto} alt="{produto.tipo}" className='tamanho' />
                 </Typography>
-                <Typography variant="h5" component="h2">
-                  {produto.produto}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  <img src={produto.foto} className='tamanho'/>
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {produto.descricao}
-                </Typography>
-                <Typography variant="body2" component="p">
-                 US$ {produto.valor}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {produto.tipo}
-                </Typography>
-
-                <Typography variant="body2" component="p">
-                  {produto.categoria?.categoria}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
-
-                  <Link to={`/atualizarProduto/${produto.id}`} className="text-decorator-none" >
-                    <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
-                        deletar
-                      </Button>
-                    </Box>
-                  </Link>
-                </Box>
-              </CardActions>
-            </Card>
-          </Box>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {produto.produto}
+                  </Typography>
+                  <Typography variant="body2">
+                    {produto.descricao}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Typography>
+                    {produto.valor}
+                  </Typography>
+                  <Button size="small">Comprar</Button>
+                </CardActions>
+              </Card>
+            </Box>
+          </Grid>
         ))
       }
     </>
