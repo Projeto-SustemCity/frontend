@@ -5,7 +5,7 @@ import { buscaId, deleteId } from '../../../services/Service';
 import './DeleteProduto.css';
 import Produto from '../../../models/Produto';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 
@@ -15,7 +15,7 @@ function DeletarProduto() {
 
     const { id } = useParams<{ id: string }>();
 
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 

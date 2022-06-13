@@ -4,15 +4,15 @@ import { Link, useNavigate } from 'react-router-dom'
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
 import './Login.css';
-import { useDispatch} from "react-redux";
-import { addToken } from "../../store/tokens/actions";
+import { useDispatch } from "react-redux";
+import { addId, addToken, addUser } from "../../store/tokens/actions";
 import { toast } from "react-toastify";
 
 function Login() {
 
     let navigate = useNavigate();
-    const dispatch = useDispatch(); 
-    const [token , setToken] = useState('')
+    const dispatch = useDispatch();
+    const [token, setToken] = useState('')
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -23,46 +23,68 @@ function Login() {
             token: ""
         })
 
-        function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+        const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            token: '',
+            foto: ""
+        })
 
-            setUserLogin({
-                ...userLogin,
-                [e.target.name]: e.target.value
-            })
-        }
-    
-        useEffect(()=>{
-            if(token !== ''){
+        useEffect(() => {
+            if (token !== '') {
                 dispatch(addToken(token));
                 navigate('/home')
             }
         }, [token])
-    
-        async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-            e.preventDefault();
-            try {
-                await login(`/usuarios/logar`, userLogin, setToken)
-                toast.success('Usuário Logado com Sucesso!', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: false,
-                    progress: undefined,
-                });
-            } catch (error) {
-                toast.error('Dados do Usuário inconsistentes. Erro ao logar!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: false,
-                    progress: undefined,
-                });
-            }
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+        setUserLogin({
+            ...userLogin,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    useEffect(() => {
+        if (respUserLogin.token !== "") {
+
+            console.log("Token: " + respUserLogin.token)
+            console.log("ID: " + respUserLogin.id)
+
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addUser(respUserLogin.usuario))
+            dispatch(addId(respUserLogin.id.toString()))
+            navigate('/home')
         }
+    }, [respUserLogin.token])
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+        try {
+            await login(`/usuarios/logar`, userLogin, setRespUserLogin)
+            toast.success('Usuário Logado com Sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+            });
+        } catch (error) {
+            toast.error('Dados do Usuário inconsistentes. Erro ao logar!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+            });
+        }
+    }
 
     return (
         <Grid container direction='row' justifyContent="center" alignItems="center">

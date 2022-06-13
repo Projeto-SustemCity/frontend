@@ -6,14 +6,14 @@ import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 function CadastroProduto() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [categoria, setCategoria] = useState<Categoria[]>([])
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 

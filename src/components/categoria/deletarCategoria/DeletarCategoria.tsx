@@ -5,12 +5,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Categoria from "../../../models/Categoria";
 import { buscaId, deleteId } from "../../../services/Service";
-import { TokenState } from "../../../store/tokens/tokensReducer";
+import { UserState } from "../../../store/tokens/tokensReducer";
 
 function DeletarCategoria() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
       (state) => state.tokens
   ); 
     const [categoria, setCategoria] = useState<Categoria>()

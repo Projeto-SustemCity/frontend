@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Categoria from '../../../models/Categoria';
 import { busca } from '../../../services/Service';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 
 import './ListaCategoria.css';
 
@@ -13,7 +13,7 @@ function ListaCategoria() {
 
   let navigate = useNavigate();
   const [categoria, setCategoria] = useState<Categoria[]>([])
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
 );
 

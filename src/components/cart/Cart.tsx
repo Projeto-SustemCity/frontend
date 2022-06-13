@@ -7,7 +7,7 @@ import { buscaId } from '../../services/Service'
 
 import './Cart.css'
 import { useSelector } from 'react-redux'
-import { TokenState } from '../../store/tokens/tokensReducer'
+import { UserState } from '../../store/tokens/tokensReducer'
 
 function Cart() {
 
@@ -17,7 +17,7 @@ function Cart() {
     const { id } = useParams<{ id: string }>()
 
     // Substituir para o uso com Redux
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 

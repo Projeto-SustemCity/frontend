@@ -6,13 +6,13 @@ import { Card, Box, CardActions, CardContent, Button, Typography } from '@materi
 import './ListaProduto.css';
 import Produto from '../../../models/Produto';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 
 function ListaProduto() {
   const [produtos, setProduto] = useState<Produto[]>([])
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
 );
   let navigate = useNavigate();
