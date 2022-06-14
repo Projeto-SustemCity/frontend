@@ -1,3 +1,35 @@
+.back{
+    background-color: #40521e;
+    width: 100vw;
+    height: 100vh;
+}
+
+.alinhar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
 .text-decorator-none{
     text-decoration: none;
+}
+
+.box2 {
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 10px;
+}
+
+.redes {
+    font-size: 40px !important;
+    color: white !important;
+}
+
+.foto{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }

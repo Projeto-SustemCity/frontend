@@ -15,14 +15,14 @@ function Home() {
 
   return (
 
-      <>   
-  <Grid  xs={12} direction="row" justifyContent="center" alignItems="center" className='back' >
-      <Grid container item  className='grid-home' >
-      <CarouselComponent />
-      
-     </Grid>
-  </Grid>
-  </>
+    <>
+      <Grid xs={12} direction="row" justifyContent="center" alignItems="center" className='back' >
+        <Grid container item className='grid-home' >
+          <CarouselComponent />
+
+        </Grid>
+      </Grid>
+    </>
   );
 }
 

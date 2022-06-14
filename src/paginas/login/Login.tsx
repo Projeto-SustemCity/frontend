@@ -23,21 +23,21 @@ function Login() {
             token: ""
         })
 
-        const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
-            id: 0,
-            nome: '',
-            usuario: '',
-            senha: '',
-            token: '',
-            foto: ""
-        })
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        token: '',
+        foto: ""
+    })
 
-        useEffect(() => {
-            if (token !== '') {
-                dispatch(addToken(token));
-                navigate('/home')
-            }
-        }, [token])
+    useEffect(() => {
+        if (token !== '') {
+            dispatch(addToken(token));
+            navigate('/home')
+        }
+    }, [token])
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 

@@ -17,28 +17,8 @@ function ListaProduto() {
   );
   let navigate = useNavigate();
 
-  useEffect(() => {
-    if (token == "") {
-      toast.info('Você precisa estar logado', {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-      navigate("/login")
-
-    }
-  }, [token])
-
   async function getProduto() {
-    await busca("/produtos/all", setProduto, {
-      headers: {
-        'Authorization': token
-      }
-    })
+    await busca("/produtos/all", setProduto, {})
   }
 
   useEffect(() => {
@@ -54,7 +34,7 @@ function ListaProduto() {
           <Grid xs={12}>
             <Box m={2}>
               <Card className='card'>
-                <CardMedia  />
+                <CardMedia />
                 <Typography>
                   <img src={produto.foto} alt="{produto.tipo}" className='tamanho' />
                 </Typography>
@@ -70,7 +50,11 @@ function ListaProduto() {
                   <Typography>
                     {produto.valor}
                   </Typography>
-                  <Button size="small">Comprar</Button>
+                  <Button size="small">
+                    <Link to='/cart'>
+                      Comprar
+                    </Link>
+                  </Button>
                 </CardActions>
               </Card>
             </Box>
