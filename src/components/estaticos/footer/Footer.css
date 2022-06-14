@@ -5,13 +5,11 @@
     padding-top: 10px;
 }
 
-.box2 {
-    padding-left: 10px;
-}
 
 .redes {
     font-size: 40px !important;
     color: white !important;
+    padding-right: 5px !important;
 }
 
 .box3 {
@@ -23,4 +21,11 @@
 .box3 a {
     text-decoration: none;
     color: white !important;
+}
+
+.imagem{
+    padding-top: 0;
+    margin-top: 0;
+    height: 50px;
+    width: 80px;
 }
