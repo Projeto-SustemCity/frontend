@@ -14,6 +14,7 @@
 }
 
 .container {
+    background:rgb(197, 253, 160);
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -23,4 +24,9 @@
 .back {
     width: 100% !important;
     height: 100% !important;
+    
+}
+
+body{
+    background:rgb(197, 253, 160);
 }

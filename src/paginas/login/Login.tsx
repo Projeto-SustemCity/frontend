@@ -87,9 +87,10 @@ function Login() {
     }
 
     return (
-        <Grid container direction='row' justifyContent="center" alignItems="center">
+        <Grid className="fundo">
+        <Grid container direction='row' justifyContent="center" alignItems="center" >
             <Grid alignItems="center" xs={6}>
-                <Box paddingX={20}>
+                <Box paddingX={20} paddingY={20}>
                     <form onSubmit={onSubmit}>
                         <Typography variant="h3" gutterBottom color="textPrimary" component='h3' align='center' className='textos1'>Entrar</Typography>
                         <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth placeholder='Insira seu e-mail cadastrado' required />
@@ -112,7 +113,9 @@ function Login() {
                 </Box>
             </Grid>
             <Grid xs={6} className='image'>
+            <img src="https://imgur.com/I37M5dQ.png"></img>
             </Grid>
+        </Grid>
         </Grid>
     );
 

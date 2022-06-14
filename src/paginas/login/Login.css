@@ -3,19 +3,28 @@
     color: black !important;
 }
 
-.textos{
+.textos {
     font-weight: bold !important;
 }
 
 .image {
-    background-image: url(https://imgur.com/I37M5dQ.png) !important;
-    background-repeat: no-repeat !important;
-    width: 100vw !important;
-    min-height: 100vh !important;
-    background-size: cover !important;
-    background-position: center !important;
+    padding-top: 25px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+
+
 }
 
 .text-decorator-none {
     text-decoration: none !important;
+}
+
+body {
+    background:rgb(197, 253, 160);
+    background-size: cover;
+    width: 100% !important;
+    height: 100% !important;
 }
