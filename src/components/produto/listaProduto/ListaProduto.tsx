@@ -28,40 +28,39 @@ function ListaProduto() {
   }, [produtos.length])
 
   return (
-    <>
-      {
-        produtos.map(produto => (
-          <Grid xs={12}>
-            <Box m={2}>
-              <Card className='card'>
-                <CardMedia />
-                <Typography>
-                  <img src={produto.foto} alt="{produto.tipo}" className='tamanho' />
+    <Grid className='back'>
+      <div className='container'>
+        {
+          produtos.map(produto => (
+
+            <Card className='card'>
+              <CardMedia />
+              <Typography>
+                <img src={produto.foto} alt="{produto.tipo}" className='tamanho' />
+              </Typography>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {produto.produto}
                 </Typography>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {produto.produto}
-                  </Typography>
-                  <Typography variant="body2">
-                    {produto.descricao}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Typography>
-                    {produto.valor}
-                  </Typography>
-                  <Button size="small">
-                    <Link to='/cart'>
-                      Comprar
-                    </Link>
-                  </Button>
-                </CardActions>
-              </Card>
-            </Box>
-          </Grid>
-        ))
-      }
-    </>
+                <Typography variant="body2">
+                  {produto.descricao}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Typography>
+                  {produto.valor}
+                </Typography>
+                <Button size="small">
+                  <Link to='/cart'>
+                    Comprar
+                  </Link>
+                </Button>
+              </CardActions>
+            </Card>
+          ))
+        }
+      </div>
+    </Grid>
   )
 }
 export default ListaProduto;

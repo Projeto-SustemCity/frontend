@@ -3,11 +3,24 @@
     height: 200px;
 }
 
-.card{
+.card {
     width: 500px;
     height: 400px;
+    margin: 20px;
 }
 
-.alinhar{ 
+.alinhar {
     display: flex;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.back {
+    width: 100% !important;
+    height: 100% !important;
 }

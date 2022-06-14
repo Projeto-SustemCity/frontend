@@ -26,7 +26,7 @@ function Sobre() {
         <Box className='box2'>
         <h5>Angela</h5>
           <Box><img src="https://i.imgur.com/23afr64.jpg" alt="Criador 1" className='foto' /></Box>
-          <a href="https://www.linkedin.com/" target="_blank"><LinkedInIcon className='redes' /></a>
+          <a href="https://www.linkedin.com/in/angela-daniela-guacaran-regalado-17805a1b8/" target="_blank"><LinkedInIcon className='redes' /></a>
           <a href="https://github.com/1575314" target="_blank"><GitHubIcon className='redes' /></a>
         </Box>
         <Box className='box2'>
@@ -51,7 +51,7 @@ function Sobre() {
           <a href="https://github.com/andradeJVF" target="_blank"><GitHubIcon className='redes' /></a>
         </Box>
         <Box className='box2'>
-        <h5>Solzinho</h5>
+        <h5>Luazinha</h5>
           <Box><img src="https://i.imgur.com/23afr64.jpg" alt="Criador 1" className='foto' /></Box>
           <a href="https://www.linkedin.com/in/nayara-rocha-1a0982205/" target="_blank"><LinkedInIcon className='redes' /></a>
           <a href="https://github.com/Nay-rch" target="_blank"><GitHubIcon className='redes' /></a>
