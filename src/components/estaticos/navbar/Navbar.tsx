@@ -11,6 +11,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import { Stack } from "@mui/material";
 import User from "../../../models/User";
+import Menus from "../menu/Menu";
+
 
 function Navbar() {
 
@@ -62,36 +64,13 @@ function Navbar() {
             <Link to='/cadastroProduto' className="text-decorator-none"><Typography variant="h6" className="fontenavbar " color="inherit">Cadastrar Produto</Typography></Link>
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Devs</Typography></Link>
 
-            <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu">
-              <Link to='/perfil' className='text-decorator-none'>
-                <PersonIcon />
-              </Link>
+            <IconButton >
+              <Menus/>
             </IconButton>
 
-            {/* <Box>
-              {
-              usuario.map(user => (
-                <Stack direction="row" spacing={2}>
-                  <Link to='/perfil'>
-                    <Avatar src={user.foto} alt={user.nome} />
-                  </Link>
-                </Stack>
-              ))
-              }
-              </Box> */}
-            
+           
 
-            <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu">
-              <Link to='/cart' className='text-decorator-none'>
-                <AddShoppingCartIcon />
-              </Link>
-            </IconButton>
-
-            <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu" onClick={goLogout}>
-              <Link to='/login' className='text-decorator-none'>
-                <ExitToAppIcon />
-              </Link>
-            </IconButton>
+           
           </Box>
 
         </Toolbar>
@@ -113,22 +92,10 @@ function Navbar() {
 
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Devs</Typography></Link>
 
-            <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu">
-              <Link to='/perfil' className='text-decorator-none'>
-                <PersonIcon />
-              </Link>
-            </IconButton>
-
-            <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu">
-              <Link to='/cart' className='text-decorator-none'>
-                <AddShoppingCartIcon />
-              </Link>
-            </IconButton>
-
-            <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu" onClick={goLogout}>
-              <Link to='/login' className='text-decorator-none'>
-                <ExitToAppIcon />
-              </Link>
+            <IconButton >
+                
+                <Menus/>
+                
             </IconButton>
           </Box>
 
