@@ -110,7 +110,6 @@ function CadastroProduto() {
                 progress: undefined,
 
             });
-            navigate("/produtosadmin/all")
         } else {
             post(`/produtos`, produtos, setProduto, {
                 headers: {
@@ -129,11 +128,10 @@ function CadastroProduto() {
             });
         }
         back()
-
     }
 
     function back() {
-        navigate('/produtos/all')
+        navigate('/produtosadmin/all')
     }
 
     return (
@@ -163,11 +161,9 @@ function CadastroProduto() {
                         }
                     </Select>
                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
-                    <Link to='/produtosadmin/all' className='text-decorator-none'>
                         <Button type="submit" variant="contained" className='finalizar'>
                             Finalizar
                         </Button>
-                    </Link>
                 </FormControl>
             </form>
         </Container>
