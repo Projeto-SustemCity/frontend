@@ -58,13 +58,13 @@ function Navbar() {
 
           <Box className="links" display="flex" justifyContent="start">
             <Link to='/home' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Home</Typography></Link>
-            <Link to="/produtos/all" className="text-decorator-none"> <Typography variant="h6" className="fontenavbar" color="inherit">Produtos</Typography></Link>
+            <Link to="/produtosadmin/all" className="text-decorator-none"> <Typography variant="h6" className="fontenavbar" color="inherit">Produtos</Typography></Link>
             <Link to='/categoria' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Categorias</Typography></Link>
             <Link to='/cadastrarCategoria' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Cadastrar Categoria</Typography></Link>
             <Link to='/cadastroProduto' className="text-decorator-none"><Typography variant="h6" className="fontenavbar " color="inherit">Cadastrar Produto</Typography></Link>
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Devs</Typography></Link>
 
-            <IconButton >
+            <IconButton className="menu-navbar">
               <Menus/>
             </IconButton>
 
@@ -92,7 +92,7 @@ function Navbar() {
 
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Devs</Typography></Link>
 
-            <IconButton >
+            <IconButton className="menu-navbar">
                 
                 <Menus/>
                 

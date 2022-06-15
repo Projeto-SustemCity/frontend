@@ -10,7 +10,7 @@
     padding: 20px;
     margin: 20px;
     width: 1000px;
-    background-color: #b0906b;
+    background-color: #929191;
 }
 
 .grid-cart {
@@ -59,4 +59,14 @@
 
 .botao{
     justify-content: end;
+}
+
+.cart-botao-1{
+    color: white !important;
+    background: #7d974e !important;
+}
+
+.cart-botao-2{
+    color: white !important;
+    background: #b0906b !important;
 }

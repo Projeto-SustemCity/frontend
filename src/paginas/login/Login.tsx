@@ -97,7 +97,7 @@ function Login() {
                         <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth placeholder='Insira sua senha cadastrada' required />
 
                         <Box marginTop={2} textAlign='center'>
-                            <Button type='submit' variant='contained' color='primary' className='textos'>
+                            <Button type='submit' variant='contained' color='primary' className='textos cor-botao'>
                                 Logar
                             </Button>
                         </Box>

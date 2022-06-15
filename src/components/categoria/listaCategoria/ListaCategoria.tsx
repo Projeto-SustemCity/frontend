@@ -15,7 +15,7 @@ function ListaCategoria() {
   const [categoria, setCategoria] = useState<Categoria[]>([])
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
-);
+  );
 
   useEffect(() => {
     if (token === '') {
@@ -27,8 +27,8 @@ function ListaCategoria() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        
-        });
+
+      });
       navigate('/login')
     }
   }, [token])
@@ -46,33 +46,32 @@ function ListaCategoria() {
   }, [categoria.length])
 
   return (
-    <>
+    <div className='container-categoria'>
       {
         categoria.map(categoria => (
 
-          <Box display='flex' justifyContent='centerdede' paddingTop={2} paddingLeft={2}>
-            <Card className='card' variant="outlined">
+          <Box paddingTop={2} paddingLeft={2}>
+            <Card className='card-tamanho'>
               <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  Categoria
+                <Typography className='cat-nome' gutterBottom>
+                  {categoria.categoria}
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography className='cat-descricao' variant="body2">
                   {categoria.descricao}
                 </Typography>
               </CardContent>
-
               <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5} >
+                <Box className='box-botao' mb={1.5} >
                   <Link to={`/atualizarCategoria/${categoria.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                      <Button variant="contained" size='small' className='botao-1'>
                         Atualizar
                       </Button>
                     </Box>
                   </Link>
                   <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
+                      <Button variant="contained" size='small' className='botao-2'>
                         Deletar
                       </Button>
                     </Box>
@@ -83,7 +82,7 @@ function ListaCategoria() {
           </Box>
 
         ))}
-    </>
+    </div>
   );
 }
 

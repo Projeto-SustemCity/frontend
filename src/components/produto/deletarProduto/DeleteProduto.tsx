@@ -53,7 +53,7 @@ function DeletarProduto() {
     }
 
     async function sim() {
-        navigate('/produtos/all')
+        navigate('/produtosadmin/all')
 
         await deleteId(`/produtos/${id}`, {
             headers: {
@@ -73,19 +73,19 @@ function DeletarProduto() {
     }
 
     function nao() {
-        navigate('/produtos/all')
+        navigate('/produtosadmin/all')
     }
 
     return (
-        <>
+        <div className='container-deletar-produto'>
             <Box m={2}>
-                <Card variant="outlined" >
+                <Card className='card-deletar-produto'>
                     <CardContent>
                         <Box justifyContent="center">
                             <Typography color="textSecondary" gutterBottom>
                                 Deseja deletar o Produto:
                             </Typography>
-                            <Typography color="textSecondary" >
+                            <Typography className='nome-produto-del' color="textSecondary" >
                                 {produtos?.produto}
                             </Typography>
                         </Box>
@@ -94,12 +94,12 @@ function DeletarProduto() {
                     <CardActions>
                         <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
                             <Box mx={2}>
-                                <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+                                <Button onClick={sim} variant="contained" className='del-botao-1' size='large'>
                                     Sim
                                 </Button>
                             </Box>
                             <Box>
-                                <Button onClick={nao} variant="contained" size='large' color="secondary">
+                                <Button onClick={nao} variant="contained" size='large' className='del-botao-2'>
                                     Não
                                 </Button>
                             </Box>
@@ -107,7 +107,7 @@ function DeletarProduto() {
                     </CardActions>
                 </Card>
             </Box>
-        </>
+        </div>
     )
 }
 

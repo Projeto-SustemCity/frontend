@@ -24,7 +24,7 @@ function Sobre() {
           <a href="https://github.com/Alecsg09" target="_blank"><GitHubIcon className='icones' /></a>
         </Box>
         <Box className='box2'>
-          <Box><img src="https://i.imgur.com/q9Ope8C.jpg?1" alt="Criador 1" className='foto' /></Box>
+          <Box><img src="https://i.imgur.com/eUa3L5i.jpg?1" alt="Criador 1" className='foto' /></Box>
           <Typography className='nomes'>Angela D.</Typography>
           <a href="https://www.linkedin.com/in/angela-daniela-guacaran-regalado-17805a1b8/" target="_blank"><LinkedInIcon className='icones' /></a>
           <a href="https://github.com/1575314" target="_blank"><GitHubIcon className='icones' /></a>

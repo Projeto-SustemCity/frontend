@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 function CadastroProduto() {
     let navigate = useNavigate();
@@ -27,8 +28,8 @@ function CadastroProduto() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                
-                });
+
+            });
             navigate("/login")
 
         }
@@ -50,7 +51,7 @@ function CadastroProduto() {
         categoria: null
     })
 
-    useEffect(() => { 
+    useEffect(() => {
         setProduto({
             ...produtos,
             categoria: categorias
@@ -107,8 +108,9 @@ function CadastroProduto() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                
-                });
+
+            });
+            navigate("/produtosadmin/all")
         } else {
             post(`/produtos`, produtos, setProduto, {
                 headers: {
@@ -123,8 +125,8 @@ function CadastroProduto() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                
-                });
+
+            });
         }
         back()
 
@@ -161,9 +163,11 @@ function CadastroProduto() {
                         }
                     </Select>
                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
-                        Finalizar
-                    </Button>
+                    <Link to='/produtosadmin/all' className='text-decorator-none'>
+                        <Button type="submit" variant="contained" className='finalizar'>
+                            Finalizar
+                        </Button>
+                    </Link>
                 </FormControl>
             </form>
         </Container>

@@ -20,6 +20,7 @@ import { Provider } from 'react-redux';
 import Cart from './components/cart/Cart';
 import Perfil from './paginas/perfil/Perfil';
 import Cards from './components/produto/listaProduto/cards/Cards';
+import ListaProdutoAdmin from './components/produto/listaProdutoAdmin/ListaProdutoAdmin';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           <Route path="/categoria" element={<ListaCategoria />} />
           <Route path="/produtos/all" element={<ListaProduto />} />
+          <Route path="/produtosadmin/all" element={<ListaProdutoAdmin />} />
           <Route path="/cadastrarCategoria" element={<CadastrarCategoria />} />
           <Route path="/atualizarCategoria/:id" element={<CadastrarCategoria />} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
@@ -44,7 +46,6 @@ function App() {
           <Route path="/atualizarProduto/:id" element={<CadastroProduto />} />
           <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
           <Route path="/cart/:id" element={<Cart />} />
-          <Route path="/cards" element={<Cards />} />
         </Routes>
       </div>
       <Footer />

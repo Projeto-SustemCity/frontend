@@ -143,7 +143,7 @@ function CadastrarCategoria() {
                 </Typography>
                 <TextField value={categoria.categoria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="categoria" label="Nome" name="categoria" margin="normal" fullWidth />
                 <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="descricao" label="Descrição" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" className='cadastrar'>
                     Cadastrar
                 </Button>
 

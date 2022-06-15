@@ -28,3 +28,8 @@ body {
     width: 100% !important;
     height: 100% !important;
 }
+
+.cor-botao{
+    color: white;
+    background: #7d974e !important;
+}

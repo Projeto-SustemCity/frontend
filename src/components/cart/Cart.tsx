@@ -8,6 +8,7 @@ import { buscaId } from '../../services/Service'
 import './Cart.css'
 import { UserState } from '../../store/tokens/tokensReducer'
 import { useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 
 function Cart() {
 
@@ -59,7 +60,16 @@ function Cart() {
     }
 
     function confirmSales() {
-        alert("Compra Confirmada! Verifique o seu email!")
+        toast.success('Compra confirmada com sucesso! Verifique seu e-mail!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+    
+          });
         navigate("/home")
     }
     return (
@@ -102,11 +112,11 @@ function Cart() {
                 <Grid className='grid botao'>
                         <Box className="cardProductButton">
                             <Box mx={1}>
-                                <Button onClick={confirmSales} variant="contained" size='small' color="primary">Confimar Compra</Button>
+                                <Button onClick={confirmSales} variant="contained" size='small' className='cart-botao-1'>Confimar Compra</Button>
                             </Box>
                             <Link to="/produtos/all" className="cardProductButton">
                                 <Box mx={1}>
-                                    <Button variant="contained" size='small' color="secondary">Cancelar</Button>
+                                    <Button variant="contained" size='small' className='cart-botao-2'>Cancelar</Button>
                                 </Box>
                             </Link>
                         </Box>
