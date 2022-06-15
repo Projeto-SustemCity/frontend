@@ -43,7 +43,7 @@ function App() {
           <Route path="/cadastroProduto" element={<CadastroProduto />} />
           <Route path="/atualizarProduto/:id" element={<CadastroProduto />} />
           <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart/:id" element={<Cart />} />
           <Route path="/cards" element={<Cards />} />
         </Routes>
       </div>

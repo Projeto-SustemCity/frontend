@@ -119,7 +119,7 @@ function Navbar() {
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Devs</Typography></Link>
 
             <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu" onClick={goLogout}>
-              <Link to='/login' className='text-decorator-none'>
+              <Link to='/login' className='logout'>
                 <ExitToAppIcon />
               </Link>
             </IconButton>

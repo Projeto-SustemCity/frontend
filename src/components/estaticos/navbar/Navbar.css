@@ -7,7 +7,7 @@
 }
 
 .links h6{
-    padding-top: 7px;
+    padding-top: 14px;
     padding-right: 30px!important;
     cursor: pointer;
     color: white;
@@ -19,6 +19,9 @@
 }
 
 .fontenavbar{
-    font-family: 'Merriweather', serif!important;
-    
+    font-family: 'Merriweather', serif!important; 
+}
+
+.logout{
+    color: white;
 }

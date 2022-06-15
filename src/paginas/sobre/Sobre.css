@@ -1,5 +1,5 @@
 .back{
-   
+    background:rgb(197, 253, 160);
     width: 100% !important;
     height: 100% !important;
 }
@@ -23,13 +23,17 @@
     padding-left: 10px;
 }
 
-.redes {
+.icones{
+    color: black;
     font-size: 40px !important;
-    color: white !important;
 }
 
 .foto{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+}
+
+.nomes{
+    font-size: 20px !important;
 }
