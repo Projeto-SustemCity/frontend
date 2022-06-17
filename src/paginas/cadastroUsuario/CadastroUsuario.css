@@ -14,8 +14,10 @@
 .btnCancelar{
     margin-right: 10px !important;
     font-weight: bold !important;
+    background: #b0906b !important;
 }
 
 .btnCadastrar{
     font-weight: bolder !important;
+    background: #7d974e !important;
 }

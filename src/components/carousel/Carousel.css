@@ -1,5 +1,5 @@
 .img {
-    background:rgb(197, 253, 160);
+    background:gray;
     width: 100px;
     height: 400px;
     object-fit: cover;
@@ -7,4 +7,8 @@
 
 body{
     background:rgb(197, 253, 160);
+}
+
+.imagens-carousel{
+    padding-top: 20px;
 }
