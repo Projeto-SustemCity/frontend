@@ -17,24 +17,25 @@
     font-size: 20px !important;
     display: flex;
     flex-wrap: wrap;
-    text-align: center !important;
+    text-align: center;
 }
 
 .card-tamanho{
-    width: 400px;
+    width: 500px;
     height: 250px;
 }
 
-.box-botao{
-    display: flex;
-    align-self: baseline;
-}
-
 .botao-1{
-    margin-left: 35px !important;
+    padding-right: 10px !important;
     background: #7d974e !important;
 }
 
 .botao-2{
     background: #b0906b !important;
+    
+}
+
+.alinhar-botao{
+    display: flex;
+    justify-content: center;
 }

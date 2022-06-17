@@ -62,7 +62,7 @@ function Navbar() {
             <Link to='/categoria' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Categorias</Typography></Link>
             <Link to='/cadastrarCategoria' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Cadastrar Categoria</Typography></Link>
             <Link to='/cadastroProduto' className="text-decorator-none"><Typography variant="h6" className="fontenavbar " color="inherit">Cadastrar Produto</Typography></Link>
-            <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Devs</Typography></Link>
+            <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Sobre Nós</Typography></Link>
 
             <IconButton className="menu-navbar">
               <Menus/>
@@ -90,7 +90,7 @@ function Navbar() {
             <Link to='/home' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Home</Typography></Link>
             <Link to="/produtos/all" className="text-decorator-none"> <Typography variant="h6" className="fontenavbar" color="inherit">Produtos</Typography></Link>
 
-            <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Devs</Typography></Link>
+            <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Sobre Nós</Typography></Link>
 
             <IconButton className="menu-navbar">
                 
@@ -116,7 +116,7 @@ function Navbar() {
             <Link to='/home' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Home</Typography></Link>
             <Link to="/produtos/all" className="text-decorator-none"> <Typography variant="h6" className="fontenavbar" color="inherit">Produtos</Typography></Link>
 
-            <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Devs</Typography></Link>
+            <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Sobre Nós</Typography></Link>
 
             <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu" onClick={goLogout}>
               <Link to='/login' className='logout'>

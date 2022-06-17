@@ -7,8 +7,8 @@ function CarouselComponent (){
     
           {img : "https://i.imgur.com/vOXM5lK.png?1"},    
          { img : "https://i.imgur.com/2gCRABX.png"},
-         { img : "https://i.imgur.com/L1RtwNC.png"},
-         { img :"https://i.imgur.com/8Z2OXBX.png"}
+         { img : "https://i.imgur.com/1PYjUFo.png"},
+         { img :"https://i.imgur.com/f509CGu.png"}
     ]
     
 
@@ -18,7 +18,7 @@ function CarouselComponent (){
 
                 items.map(item => (
                     <>
-                    <img src={item.img} alt= "Item"/>
+                    <img src={item.img} alt= "Item" className='imagens-carousel'/>
                     </>
                 ))
             }

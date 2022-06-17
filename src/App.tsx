@@ -19,7 +19,6 @@ import store from './store/store';
 import { Provider } from 'react-redux';
 import Cart from './components/cart/Cart';
 import Perfil from './paginas/perfil/Perfil';
-import Cards from './components/produto/listaProduto/cards/Cards';
 import ListaProdutoAdmin from './components/produto/listaProdutoAdmin/ListaProdutoAdmin';
 
 function App() {

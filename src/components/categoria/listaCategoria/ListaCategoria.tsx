@@ -60,23 +60,18 @@ function ListaCategoria() {
                   {categoria.descricao}
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Box className='box-botao' mb={1.5} >
+              <CardActions className='alinhar-botao'>
                   <Link to={`/atualizarCategoria/${categoria.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' className='botao-1'>
-                        Atualizar
-                      </Button>
-                    </Box>
+                    <Button variant="contained" size='small' className='botao-1'>
+                      Atualizar
+                    </Button>
                   </Link>
+               
                   <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' className='botao-2'>
-                        Deletar
-                      </Button>
-                    </Box>
+                    <Button variant="contained" size='small' className='botao-2'>
+                      Deletar
+                    </Button>
                   </Link>
-                </Box>
               </CardActions>
             </Card>
           </Box>
