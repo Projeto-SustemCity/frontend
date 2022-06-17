@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { Box } from '@material-ui/core'
+import React, { ChangeEvent, useEffect, useState } from 'react'
+import { TextField, Box} from "@material-ui/core";
 import { useNavigate } from 'react-router-dom'
 import User from '../../models/User'
 import { buscaId } from '../../services/Service'
-
 import './Perfil.css'
-import useLocalStorage from 'react-use-localstorage'
 import { useSelector } from 'react-redux'
 import { UserState } from '../../store/tokens/tokensReducer'
+import 'materialize-css';
+import {  Col, Card } from 'react-materialize';
+
+
 
 function Perfil() {
 
@@ -27,6 +29,22 @@ function Perfil() {
         senha: '',
         foto: ''
     })
+    const [userResult, setUserResult] = useState<User>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto:''
+        })
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+        setUserResult({
+            ...userResult,
+            [e.target.name]: e.target.value
+        })
+    }
 
     useEffect(() => {
         if (token === "") {
@@ -50,30 +68,33 @@ function Perfil() {
     }, [userId ])
 
     return (
-        <Box className='card-principal'>
-            <Box className='card-container-imagem'>
-                <img className='card-imagem'
-                    src={ user.foto }
-                    alt={ user.nome } />
-            </Box>
-
-            <Box className='card-container-info'>
-                <Box>
-                    <h1>{ user.nome }</h1>
+        <Box  className='card-principal'>
+             <Box className='meu-perfil'>
+                    <h1>Meu Perfil</h1>
                     <hr />
                 </Box>
+   
+      
+    <Col className='card-container-info'>
+        
+         <Col className='card-container-imagem'>
+    <img className='card-imagem'
+                    src={ user.foto }
+                    alt={ user.nome } />
+    </Col>
 
-                <p className='card-container-texto'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam accusantium totam incidunt architecto maiores, perferendis eius. Tempora ullam magni dolore voluptatibus, quidem sunt tempore distinctio ut aliquam modi aliquid officiis.
-                    Assumenda voluptatibus, animi pariatur voluptatum magnam ullam aspernatur optio suscipit incidunt dolor modi quos aperiam. Quam possimus rerum iste nobis quas porro unde sequi, sed nisi labore est voluptas corrupti.
-                    Deleniti officiis sint perspiciatis nisi iste, voluptate sunt asperiores dolor sapiente non corporis omnis voluptatem soluta. Nulla odio alias aperiam, magnam eaque assumenda tempora! Inventore odit iure unde placeat iste.
-                </p>
-
-                <p className='card-container-texto'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consectetur tempore enim hic ad, optio ratione repellendus et. Nemo facilis laborum eum facere ipsam ab ad iusto eligendi deleniti qui?
-                </p>
-            </Box>
-        </Box>
+               
+        <Card className='card-container-texto'>
+          <Box>
+          <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth placeholder='Insira seu nome completo' required/>
+          <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth placeholder='Insira um e-mail válido' required />
+            <Col s={12} m={12}>
+             
+            </Col>
+          </Box>
+        </Card>
+    </Col>
+  </Box>
     )
 }
 

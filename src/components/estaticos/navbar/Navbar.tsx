@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, IconButton, Toolbar, Typography, Box, Avatar } from "@material-ui/core";
+import { AppBar, IconButton, Toolbar, Typography, Avatar, Box } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom"
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { toast } from 'react-toastify';
@@ -12,6 +12,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import { Stack } from "@mui/material";
 import User from "../../../models/User";
 import Menus from "../menu/Menu";
+
 
 
 function Navbar() {
