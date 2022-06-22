@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
-import './CadastroProduto.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
@@ -8,7 +7,8 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+
+import './CadastroProduto.css';
 
 function CadastroProduto() {
     let navigate = useNavigate();
@@ -31,7 +31,6 @@ function CadastroProduto() {
 
             });
             navigate("/login")
-
         }
     }, [token])
 
@@ -161,9 +160,9 @@ function CadastroProduto() {
                         }
                     </Select>
                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
-                        <Button type="submit" variant="contained" className='finalizar'>
-                            Finalizar
-                        </Button>
+                    <Button type="submit" variant="contained" className='finalizar'>
+                        Finalizar
+                    </Button>
                 </FormControl>
             </form>
         </Container>

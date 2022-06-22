@@ -1,14 +1,13 @@
 import React, { useEffect, useState, ChangeEvent } from 'react'
 import { Box, Button, Card, Grid, TextField, Typography } from '@material-ui/core'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-
 import Produto from '../../models/Produto'
 import { buscaId } from '../../services/Service'
-
-import './Cart.css'
 import { UserState } from '../../store/tokens/tokensReducer'
 import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
+
+import './Cart.css'
 
 function Cart() {
 
@@ -68,48 +67,48 @@ function Cart() {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-    
-          });
+
+        });
         navigate("/home")
     }
     return (
         <div className='div-back'>
-        <div className='container-cart'>
-            <Grid className='grid-cart'>
-                <Grid >
-                    <Box className='img'>
-                        <Typography><img src={produto.foto} alt="Img" /></Typography>
-                    </Box>
-                </Grid>
+            <div className='container-cart'>
+                <Grid className='grid-cart'>
+                    <Grid >
+                        <Box className='img'>
+                            <Typography><img src={produto.foto} alt="Img" /></Typography>
+                        </Box>
+                    </Grid>
 
-                <Grid>
+                    <Grid>
 
-                    <Card variant="outlined" className='cardContainer'>
+                        <Card variant="outlined" className='cardContainer'>
 
-                        <div className='cardProduct'>
-                            <div className='cardProductInfo'>
-                                <Typography variant="h5" component="h2">
-                                    {produto.produto}
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    R${produto.valor}
-                                </Typography>
-                                <TextField
-                                    value={quantidadeFinal}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
-                                    InputProps={{ inputProps: { min: 1, max: 10 } }}
-                                    id="quantidade" label="quantidade" type="number" variant="outlined"
-                                    name="quantidade" margin="normal" fullWidth
-                                />
-                                <Typography variant="body2" component="p">
-                                    Total: R$ {valorTotal()}
-                                </Typography>
+                            <div className='cardProduct'>
+                                <div className='cardProductInfo'>
+                                    <Typography variant="h5" component="h2">
+                                        {produto.produto}
+                                    </Typography>
+                                    <Typography variant="body2" component="p">
+                                        R${produto.valor}
+                                    </Typography>
+                                    <TextField
+                                        value={quantidadeFinal}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
+                                        InputProps={{ inputProps: { min: 1, max: 10 } }}
+                                        id="quantidade" label="quantidade" type="number" variant="outlined"
+                                        name="quantidade" margin="normal" fullWidth
+                                    />
+                                    <Typography variant="body2" component="p">
+                                        Total: R$ {valorTotal()}
+                                    </Typography>
+                                </div>
                             </div>
-                        </div>
-                    </Card>
-                </Grid>
+                        </Card>
+                    </Grid>
 
-                <Grid className='grid botao'>
+                    <Grid className='grid botao'>
                         <Box className="cardProductButton">
                             <Box mx={1}>
                                 <Button onClick={confirmSales} variant="contained" size='small' className='cart-botao-1'>Confimar Compra</Button>
@@ -120,9 +119,9 @@ function Cart() {
                                 </Box>
                             </Link>
                         </Box>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </div>
+            </div>
         </div>
     )
 }

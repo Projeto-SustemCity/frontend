@@ -1,29 +1,28 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { TextField, Box} from "@material-ui/core";
+import { TextField, Box } from "@material-ui/core";
 import { useNavigate } from 'react-router-dom'
 import User from '../../models/User'
 import { buscaId } from '../../services/Service'
 import './Perfil.css'
 import { useSelector } from 'react-redux'
 import { UserState } from '../../store/tokens/tokensReducer'
+import { Col, Card } from 'react-materialize';
+
 import 'materialize-css';
-import {  Col, Card } from 'react-materialize';
-
-
 
 function Perfil() {
 
     let navigate = useNavigate()
-    const userId = useSelector < UserState, UserState["id"]>(
-    (state) => state.id
+    const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
     )
 
-    const token = useSelector < UserState, UserState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
-        )
+    )
 
     const [user, setUser] = useState<User>({
-        id: + userId,   
+        id: + userId,
         nome: '',
         usuario: '',
         senha: '',
@@ -35,7 +34,7 @@ function Perfil() {
             nome: '',
             usuario: '',
             senha: '',
-            foto:''
+            foto: ''
         })
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
@@ -54,7 +53,7 @@ function Perfil() {
     }, [token])
 
     async function findById(id: string) {
-         await buscaId(`/usuarios/${id}`, setUser, {
+        await buscaId(`/usuarios/${id}`, setUser, {
             headers: {
                 'Authorization': token
             }
@@ -63,38 +62,35 @@ function Perfil() {
 
     useEffect(() => {
         if (userId !== undefined) {
-            findById(userId )
+            findById(userId)
         }
-    }, [userId ])
+    }, [userId])
 
     return (
-        <Box  className='card-principal'>
-             <Box className='meu-perfil'>
-                    <h1>Meu Perfil</h1>
-                    <hr />
-                </Box>
-   
-      
-    <Col className='card-container-info'>
-        
-         <Col className='card-container-imagem'>
-    <img className='card-imagem'
-                    src={ user.foto }
-                    alt={ user.nome } />
-    </Col>
+        <Box className='card-principal'>
+            <Box className='meu-perfil'>
+                <h1>Meu Perfil</h1>
+                <hr />
+            </Box>
 
-               
-        <Card className='card-container-texto'>
-          <Box>
-          <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth placeholder='Insira seu nome completo' required/>
-          <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth placeholder='Insira um e-mail válido' required />
-            <Col s={12} m={12}>
-             
+            <Col className='card-container-info'>
+                <Col className='card-container-imagem'>
+                    <img className='card-imagem'
+                        src={user.foto}
+                        alt={user.nome} />
+                </Col>
+
+                <Card className='card-container-texto'>
+                    <Box>
+                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth placeholder='Insira seu nome completo' required />
+                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth placeholder='Insira um e-mail válido' required />
+                        <Col s={12} m={12}>
+
+                        </Col>
+                    </Box>
+                </Card>
             </Col>
-          </Box>
-        </Card>
-    </Col>
-  </Box>
+        </Box>
     )
 }
 

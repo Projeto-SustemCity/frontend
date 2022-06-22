@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import { AppBar, IconButton, Toolbar, Typography, Avatar, Box } from "@material-ui/core";
+import { AppBar, IconButton, Toolbar, Typography, Box } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom"
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { toast } from 'react-toastify';
-import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import PersonIcon from '@mui/icons-material/Person';
-import { Stack } from "@mui/material";
 import User from "../../../models/User";
 import Menus from "../menu/Menu";
 
-
+import "./Navbar.css";
 
 function Navbar() {
 
@@ -64,18 +60,14 @@ function Navbar() {
             <Link to='/cadastrarCategoria' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Cadastrar Categoria</Typography></Link>
             <Link to='/cadastroProduto' className="text-decorator-none"><Typography variant="h6" className="fontenavbar " color="inherit">Cadastrar Produto</Typography></Link>
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Sobre Nós</Typography></Link>
-
             <IconButton className="menu-navbar">
-              <Menus/>
+              <Menus />
             </IconButton>
-
-           
-
-           
           </Box>
 
         </Toolbar>
       </AppBar>
+
   } else if (user !== 'admin@admin.com.br' && token != '') {
     navbarComponent =
       <AppBar position="static" className="fontenavbar" >
@@ -90,13 +82,9 @@ function Navbar() {
           <Box className="links" display="flex" justifyContent="start">
             <Link to='/home' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Home</Typography></Link>
             <Link to="/produtos/all" className="text-decorator-none"> <Typography variant="h6" className="fontenavbar" color="inherit">Produtos</Typography></Link>
-
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Sobre Nós</Typography></Link>
-
             <IconButton className="menu-navbar">
-                
-                <Menus/>
-                
+              <Menus />
             </IconButton>
           </Box>
 
@@ -116,9 +104,7 @@ function Navbar() {
           <Box className="links" display="flex" justifyContent="start">
             <Link to='/home' className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Home</Typography></Link>
             <Link to="/produtos/all" className="text-decorator-none"> <Typography variant="h6" className="fontenavbar" color="inherit">Produtos</Typography></Link>
-
             <Link to="/sobre" className="text-decorator-none"><Typography variant="h6" className="fontenavbar" color="inherit">Sobre Nós</Typography></Link>
-
             <IconButton className='text-decorator-none' edge="start" color="inherit" aria-label="menu" onClick={goLogout}>
               <Link to='/login' className='logout'>
                 <ExitToAppIcon />

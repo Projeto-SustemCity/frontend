@@ -3,9 +3,9 @@ import { Box, Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
+import { toast } from 'react-toastify';
 
 import './CadastroUsuario.css';
-import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
@@ -17,7 +17,7 @@ function CadastroUsuario() {
             nome: '',
             usuario: '',
             senha: '',
-            foto:''
+            foto: ''
         })
 
     const [userResult, setUserResult] = useState<User>(
@@ -26,7 +26,7 @@ function CadastroUsuario() {
             nome: '',
             usuario: '',
             senha: '',
-            foto:''
+            foto: ''
         })
 
     useEffect(() => {
@@ -40,7 +40,6 @@ function CadastroUsuario() {
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
-
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
@@ -63,7 +62,7 @@ function CadastroUsuario() {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-                    });
+                });
             } catch (error) {
                 toast.error('Erro ao cadastrar', {
                     position: "top-right",
@@ -73,7 +72,7 @@ function CadastroUsuario() {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-                    });
+                });
             }
         } else {
             toast.error('Dados inconsistentes. Verifique as informações de cadastro!', {
@@ -84,7 +83,7 @@ function CadastroUsuario() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                });
+            });
         }
     }
 
@@ -95,11 +94,11 @@ function CadastroUsuario() {
                 <Box paddingX={10}>
                     <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2' >Cadastrar</Typography>
-                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth placeholder='Insira seu nome completo' required/>
+                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth placeholder='Insira seu nome completo' required />
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth placeholder='Insira um e-mail válido' required />
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth placeholder='Mínimo de 8 carácteres' required />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth placeholder='Digite a senha novamente' required />
-                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='Foto' variant='outlined' name='foto' margin='normal' fullWidth placeholder='Insira um link da sua foto' required/>
+                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='Foto' variant='outlined' name='foto' margin='normal' fullWidth placeholder='Insira um link da sua foto' required />
 
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>

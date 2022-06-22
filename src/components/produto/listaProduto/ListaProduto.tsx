@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { busca } from '../../../services/Service'
-import { Box, Button, Grid } from '@material-ui/core';
-
-import './ListaProduto.css';
+import { Box, Grid } from '@material-ui/core';
 import Produto from '../../../models/Produto';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
+
+import './ListaProduto.css';
 
 function ListaProduto() {
     let navigate = useNavigate();

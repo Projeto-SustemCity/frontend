@@ -1,12 +1,12 @@
 import { Box, Grid, Typography } from '@material-ui/core';
-import react, { useEffect } from 'react'
+import react from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { UserState } from '../../store/tokens/tokensReducer';
-import './Sobre.css'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
+import './Sobre.css'
 
 function Sobre() {
   let navigate = useNavigate();

@@ -2,24 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { Button, Box, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/Service';
-import './DeleteProduto.css';
 import Produto from '../../../models/Produto';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
+import './DeleteProduto.css';
 
 function DeletarProduto() {
 
     let navigate = useNavigate();
-
     const { id } = useParams<{ id: string }>();
-
+    const [produtos, setProdutos] = useState<Produto>()
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
-
-    const [produtos, setProdutos] = useState<Produto>()
 
     useEffect(() => {
         if (token === "") {
@@ -34,7 +31,6 @@ function DeletarProduto() {
 
             });
             navigate("/login")
-
         }
     }, [token])
 
