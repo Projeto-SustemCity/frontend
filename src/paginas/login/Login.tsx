@@ -110,9 +110,15 @@ function Login() {
                             <Link to='/cadastrousuario' className="text-decorator-none">
                                 <Typography variant="subtitle1" gutterBottom align="center" className='textos1'>Cadastre-se</Typography>
                             </Link>
-                            <p>Para acessar como administrador use:</p>
-                            <p>Usuário: admin@admin.com.br</p>
-                            <p>Senha: 12345678</p>
+                        </Box>
+                        <Box>
+                            <Typography variant="subtitle1" gutterBottom align="center">Para acessar como administrador use:</Typography>
+                        </Box>
+                        <Box>
+                            <Typography variant="subtitle1" gutterBottom align="center">Usuário: admin@admin.com.br</Typography>
+                        </Box>
+                        <Box>
+                            <Typography variant="subtitle1" gutterBottom align="center">Senha: 12345678</Typography>
                         </Box>
                     </Box>
                 </Grid>
